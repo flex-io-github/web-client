@@ -44,6 +44,18 @@ export function users(state = {}, action) {
           return user;
         })
       };
+    case userConstants.UPDATE_REQUEST:
+      return {
+        items: state.items.map(c => c.id === action.user.id ? { ...c, ...action.user } : c)
+      };
+    case userConstants.UPDATE_SUCCESS:
+      return {
+        ...state
+      };
+    case userConstants.UPDATE_FAILURE:
+      return { 
+        error: action.error
+      };
     default:
       return state
   }

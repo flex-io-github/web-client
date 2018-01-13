@@ -32,6 +32,7 @@ class HomePage extends React.Component {
                                     : user.deleteError ? <span className="text-danger"> - ERROR: {user.deleteError}</span>
                                     : <span> - <a onClick={this.handleDeleteUser(user.id)}>Delete</a></span>
                                 }
+                                <Link to={`/user/${user.id}`}>Edit</Link>
                             </li>
                         )}
                     </ul>

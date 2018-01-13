@@ -10,6 +10,7 @@ import { PrivateRoute } from "../_components";
 import { HomePage } from "../HomePage";
 import { LoginPage } from "../LoginPage";
 import { RegisterPage } from "../RegisterPage";
+import UserEditPage from "../UserEditPage/UserEditPage";
 import { Content, Footer, NavBar, SidebarMenu } from "./_components";
 import "./_styles/App.css";
 
@@ -47,6 +48,10 @@ class App extends React.Component {
                                     <Route
                                         path="/register"
                                         component={RegisterPage}
+                                    />
+                                    <Route
+                                        path={"/user/:UserId"}
+                                        component={UserEditPage}
                                     />
                                 </div>
                             </Router>
